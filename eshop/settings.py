@@ -153,15 +153,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [BASE_DIR / 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/' #we saying Django i want upload media at this directory
 
-MEDIA_ROOT = BASE_DIR / 'static/media'
+MEDIA_ROOT = BASE_DIR / 'static/media/images'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -200,6 +200,6 @@ SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
 # AWS_S3_FILE_OVERWRITE = False
 
 
-# # Adming styling adjustment
-# ADMIN_MEDIA_PREFIX = '/static/admin/'
+# Adming styling adjustment
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
