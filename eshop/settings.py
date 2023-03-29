@@ -29,9 +29,9 @@ SECRET_KEY = 'django-insecure-7dqq&uae%ces993$*_rldd%*yy)r2tu0w^z_v*ff5#s%zbg_d$
 # SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['64.226.87.90', '*', 'localhost:8000']
+ALLOWED_HOSTS = [ '*', 'localhost:8000'] # '64.226.87.90',
 
 
 # Application definition
@@ -93,24 +93,24 @@ WSGI_APPLICATION = 'eshop.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoproject',
-        'USER': 'djangodb',
-        'PASSWORD': 'dfyzlanome',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'djangoproject',
+#         'USER': 'djangodb',
+#         'PASSWORD': 'dfyzlanome',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 
@@ -167,7 +167,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 
 MEDIA_URL = '/media/' #we saying Django i want upload media at this directory
 
-MEDIA_ROOT = BASE_DIR / 'static/media/images'
+MEDIA_ROOT = BASE_DIR / '/media/images'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
