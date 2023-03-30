@@ -3,7 +3,7 @@ from .forms import CreateUserForm, LoginForm, UpdateUserForm
 
 from payment.forms import ShippingForm
 from payment.models import ShippingAddress
-
+from django.views.decorators.csrf import csrf_protect 
 from payment.models import Order, OrderItem
 
 from django.contrib.auth.models import User
@@ -24,7 +24,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
-
+@csrf_protect 
 def register(request):
 
     form = CreateUserForm()
@@ -64,7 +64,7 @@ def register(request):
 
     return render(request, 'account/registration/register.html', context=context)
 
-
+@csrf_protect 
 def email_verification(request, uidb64, token):
 
     unique_id = force_str(urlsafe_base64_decode(uidb64))
@@ -87,24 +87,24 @@ def email_verification(request, uidb64, token):
 
     
 
-
+@csrf_protect 
 def email_verification_sent(request):
 
     return render(request, 'account/registration/email-verification-sent.html')
 
-
+@csrf_protect 
 def email_verification_success(request):
 
     return render(request, 'account/registration/email-verification-success.html')
 
-
+@csrf_protect 
 def email_verification_failed(request):
 
     return render(request, 'account/registration/email-verification-failed.html')
 
 
 
-
+@csrf_protect 
 def my_login(request):
 
     form = LoginForm()
@@ -135,6 +135,7 @@ def my_login(request):
 
 
 # logout
+@csrf_protect 
 def user_logout(request): # excepts session key to kill
 
     try:
@@ -156,7 +157,7 @@ def user_logout(request): # excepts session key to kill
 
     return redirect('store')
 
-
+@csrf_protect 
 @login_required(login_url='my-login')
 def dashboard(request):
 
@@ -164,7 +165,7 @@ def dashboard(request):
 
 
 
-
+@csrf_protect 
 @login_required(login_url='my-login')
 def profile_management(request):
     
@@ -188,7 +189,7 @@ def profile_management(request):
 
     return render(request, 'account/profile-management.html', context=context)
 
-
+@csrf_protect 
 @login_required(login_url='my-login')
 def delete_account(request):
 
@@ -211,6 +212,7 @@ def delete_account(request):
 
 
 # Shipping view
+@csrf_protect 
 @login_required(login_url='my-login')
 def manage_shipping(request):
 
@@ -245,7 +247,7 @@ def manage_shipping(request):
 
     return render(request, 'account/manage-shipping.html', context=context)
 
-
+@csrf_protect 
 @login_required(login_url='my-login')
 def track_orders(request):
 
