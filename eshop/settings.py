@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-7dqq&uae%ces993$*_rldd%*yy)r2tu0w^z_v*ff5#s%zbg_d$
 # SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [ '64.226.76.25', '*', 'localhost:8000'] # '64.226.87.90',
 
@@ -153,31 +153,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 
-STATIC_URL = '/static/'    
+MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '/static/')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-#ds
-# #Stackoverflow
-# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-# # STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-
-# STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = [BASE_DIR / 'static']
-
-# MEDIA_URL = '/media/' #we saying Django i want upload media at this directory
-
-# MEDIA_ROOT = BASE_DIR / '/media/images'
+MEDIA_ROOT = BASE_DIR / 'static/media/images'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
