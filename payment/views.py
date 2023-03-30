@@ -2,10 +2,10 @@ from django.shortcuts import render
 from .models import ShippingAddress, Order, OrderItem
 
 from cart.cart import Cart
-from django.views.decorators.csrf import csrf_protect 
+
 from django.http import JsonResponse
 
-@csrf_protect
+
 def checkout(request):
 
     # Users with account -- Pre-fill the form
@@ -28,7 +28,7 @@ def checkout(request):
         return render(request, 'payment/checkout.html')
 
 
-@csrf_protect
+
 def complete_order(request):
 
     if request.POST.get('action') == 'post':
@@ -88,7 +88,7 @@ def complete_order(request):
 
 
 
-@csrf_protect
+
 def payment_success(request):
     # Clear shopping cart
 
@@ -102,7 +102,7 @@ def payment_success(request):
 
 
 
-@csrf_protect
+
 def payment_failed(request):
 
     return render(request, 'payment/payment-failed.html')
