@@ -6,15 +6,19 @@ from store.models import Product
 
 from django.shortcuts import get_object_or_404
 
+from django.views.decorators.csrf import csrf_protect 
+
 from django.http import JsonResponse
 
+
+@csrf_protect 
 def cart_summory(request): # obtain session data and pass it on through out cart-summory.html(page)
 
     cart = Cart(request)
     
     return render(request, 'cart-summary.html', {'cart':cart})
 
-
+@csrf_protect 
 def cart_add(request):
 
     cart = Cart(request) #we are making use of session class cart()
@@ -35,6 +39,8 @@ def cart_add(request):
 
         return response
 
+
+@csrf_protect 
 def cart_delete(request):
 
     cart = Cart(request) #we are making use of session class cart()
@@ -57,7 +63,7 @@ def cart_delete(request):
         
         
 
-
+@csrf_protect 
 def cart_update(request):
     
     cart = Cart(request)
