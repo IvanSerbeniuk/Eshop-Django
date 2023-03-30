@@ -155,19 +155,29 @@ USE_TZ = True
 
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
+
+STATIC_URL = '/static/'    
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, '/static/')
+]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 #ds
-#Stackoverflow
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# #Stackoverflow
+# PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+# # STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
 # STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 
-STATIC_URL = '/static/'
+# STATICFILES_DIRS = [BASE_DIR / 'static']
 
-STATICFILES_DIRS = [BASE_DIR / 'static']
+# MEDIA_URL = '/media/' #we saying Django i want upload media at this directory
 
-MEDIA_URL = '/media/' #we saying Django i want upload media at this directory
-
-MEDIA_ROOT = BASE_DIR / '/media/images'
+# MEDIA_ROOT = BASE_DIR / '/media/images'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
