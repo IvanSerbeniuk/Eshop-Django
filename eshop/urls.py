@@ -22,3 +22,4 @@ urlpatterns = [
     path('payment/', include('payment.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)      #MEDIA_URL this is why we imported settings we can connect to var we imported
+
