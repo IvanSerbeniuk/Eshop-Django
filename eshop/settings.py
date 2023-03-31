@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
     'store', # Django app
     'cart', # Django app
@@ -180,7 +181,7 @@ EMAIL_USE_TLS = 'True'
 EMAIL_HOST_USER = 'serbeniuk.ivan@gmail.com' # My gmail address
 EMAIL_HOST_PASSWORD = 'yxchaiyjitghfnbp' # Enter your app password
 
-
+SITE_ID = 2#
 
 # Allow PayPal popups 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
